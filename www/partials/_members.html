@@ -1,0 +1,12 @@
+      <div id="members">
+        {{#section team_members sortable=true}}
+        <div class="member">
+          <div class="portrait-border">
+            {{portrait type=image width=128px}}
+          </div>
+          <h3>{{name}}<span class="discord-tag">#{{discord_tag}}</span></h3>
+          <p>{{role}}</p>
+        </div>
+        {{/section}}
+      </div>
+

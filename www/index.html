@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>chaoslands</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Megrim|Cantarell" rel="stylesheet">
+  {{#section metadata multiple=false}}
+  <meta property="og:site_name" content="{{team}}"/>
+  <meta property="og:url" content="{{team_link}}"/>
+  <meta property="og:title" content="{{title}}"/>
+  <meta property="og:description" content="{{description}}"/>
+  <meta property="twitter:image" content="https://chaoslands.fun{{preview_image type=image required=false tag=false}}"/>
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta name="theme-color" content="{{theme_color help="In Hex"}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{favicon type=image width=32 height=32 tag=false}}">
+  {{/section}}
+  <link rel="stylesheet" type="text/css" href="/stylesheets/site.css">
+</head>
+
+<body>
+  </div>
+    <div class="color-bar" id="cb-small"></div>
+  <div class="background"
+    style="background: url({{background type=image tag=false required=false width=1920px}}) no-repeat; background-size: cover; background-attachment: fixed;">
+    <header class="header"
+      {{#if background}}style="background: linear-gradient(45deg, rgba(255,79,244,0.5) 0%, rgba(255,79,244,0.5) 19%, rgba(111,176,255,0.5) 50%, rgba(99,255,105,0.5) 82%, rgba(99,255,105,0.5) 100%);"
+      {{/if}}>
+      <div class="cutout">
+        <div class="logo">
+          {{logo type=image}}
+        </div>
+        <h1>{{name}}</h1>
+        <div class="container">
+          <h2>{{server_address}}</h2>
+          <p>{{headline}}</p>
+          <p>{{#section buttons sortable=true}}<a class="login button" href="{{link}}">{{name}}</a>{{/section}}</p>
+        </div>
+      </div>
+      <div class="scroll-arrow">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 720 410" width="" height="410pt"><defs><clipPath id="_clipPath_YOWmo2F05J7PbhJkVCpY5jcm3oIDy6DQ"><rect width="720" height="410"/></clipPath></defs><g clip-path="url(#_clipPath_YOWmo2F05J7PbhJkVCpY5jcm3oIDy6DQ)"><path d=" M 395.36 395.36 L 705.36 85.36 C 714.73 75.98 720 63.26 720 50 C 720 36.74 714.73 24.02 705.36 14.64 C 695.98 5.27 683.26 0 670 0 C 656.74 0 644.02 5.27 634.64 14.64 L 360 289.28 L 85.36 14.64 C 75.98 5.27 63.26 0 50 0 C 36.74 0 24.02 5.27 14.64 14.64 C 5.27 24.02 0 36.74 0 50 C 0 63.26 5.27 75.98 14.64 85.36 L 324.64 395.36 C 334.02 404.73 346.74 410 360 410 L 360 410 C 373.26 410 385.98 404.73 395.36 395.36 Z " fill-rule="evenodd" fill="rgb(255,255,255)"/></g></svg>
+
+      </div>
+    </header>
+  </div>
+    
+  <div class="color-bar" id="cb-big"></div>
+
+  {{#section parts sortable=true}}
+  <section>
+    <div class="container part" style="flex-direction: {{direction type=choice options=row,row-reverse input=toggle}}">
+      <div class="part-description" {{#if image}}style="width:50%" {{/if}}>
+        <header>
+          <h2>{{title}}</h2>
+        </header>
+        <p>
+          {{description type=html editor=markdown}}
+        </p>
+      </div>
+      {{#if image}}
+      <div class="part-image">
+        <div class="img-border">
+          {{image type=image required=false width=600px}}
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </section>
+  {{/section}}
+
+    <div class="container" id="team">
+      <header>
+        <h2>chaos team</h2>
+      </header>
+  
+  {{> partials/members}}
+  {{> partials/footer}}
+
+  <script src="/javascripts/site.js"></script>
+</body>
+
+</html>
